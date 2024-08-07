@@ -27,3 +27,17 @@ def searchElement(new_tuple,element):
             return f"the {element} present in the index of {i}"
     return f"the element '{element}' is not found"    
 print(searchElement(Tuple,'x'))        
+
+#  Operations/functions
+myTuple=(1,2,3,5,4,5)
+myTuple1=(5,6,7,8,9)
+
+print(myTuple+myTuple1)
+print(myTuple *4)
+print(9 in myTuple)
+print(myTuple.count(5))
+print(myTuple.index(5))
+print(len(myTuple))
+print(max(myTuple1))
+print(min(myTuple1))
+print(tuple([4,2,44,5,5,6,7,8]))

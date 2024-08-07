@@ -97,3 +97,79 @@ def first_secone(my_list):
 
 my_list=[10,20,22,33,45,67,89,93]
 print(first_secone(my_list))            
+
+## 8) Removing the Duplicates in a list
+
+def remove_duplicates(lst):
+    unique_lst=[]
+    seen=set()
+    for item in lst:
+        if item not in seen:
+            unique_lst.append(item)
+            seen.add(item)
+    return unique_lst
+
+my_list=[10,20,22,10,33,10,45,67,67,93,89,93]
+print(remove_duplicates(my_list))        
+
+## 9) Pairs of list is equal to targated value
+
+def sum_pair(array,target):
+    result=[]
+    for i in range(len(array)):
+        for j in range(i+1,len(array)):
+            if array[i]+array[j]==target:
+                result.append(f"{array[i]}+{array[j]}")
+    return result
+
+arr=[2, 4, 3, 5, 6, -2, 4, 7, 8, 9]
+target=7
+print(sum_pair(arr,target))            
+
+## 10) Duplicates in an array True/False
+
+def contains_duplicates(arr):
+    seen=set()
+    for num in arr:
+        if num in seen:
+            return num
+        seen.add(num)
+    return f"this array does not  contain duplicates element"
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9,1]
+print(contains_duplicates(nums))    
+
+## 11) Permutations
+
+def Permutations(lst1,lst2):
+    if len(lst1) != len(lst2):
+        return False
+    lst1.sort()
+    lst2.sort()
+    if lst1 == lst2:
+        return True
+    else:
+        return False
+    
+lst1=[1,2,3] 
+lst2=[2,3,1]
+print(Permutations(lst1,lst2))   
+
+## 12) Rotate the mtrix by 90 degree
+
+def rotate(matrix):
+    n = len(matrix)
+ 
+    # Transpose the matrix
+    for i in range(n):  # Iterate over the rows
+        for j in range(i, n):  # Iterate over the columns starting from the current row 'i'
+            # Swap the elements at positions (i, j) and (j, i)
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+ 
+    # Reverse each row
+    for row in matrix:  # Iterate over each row in the matrix
+        row.reverse()  # Reverse the elements in the current row
+
+matrix1 = [[1,2,3],[4,5,6],[7,8,9]]
+
+print(rotate(matrix1))
